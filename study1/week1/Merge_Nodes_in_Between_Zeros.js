@@ -21,11 +21,9 @@ function mergeNodes(head) {
   let currNode = head.next;
 
   while (currNode) {
-    if (currNode.val == 0) {
-      if (currNode.next !== null) {
-        temp.next = new ListNode();
-        temp = temp.next
-      }
+    if (currNode.val == 0 && currNode.next !== null) {
+      temp.next = new ListNode();
+      temp = temp.next
     } else {
       temp.val += currNode.val;
     }
