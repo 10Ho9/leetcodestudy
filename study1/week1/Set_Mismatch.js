@@ -15,7 +15,7 @@ function findErrorNums(nums) {
   let sum = 0;
   let duplicate = 0;
 
-  for (num of nums) {
+  for (const num of nums) {
     if (checkArray[num]) {
       duplicate = num;
       sum += num;
