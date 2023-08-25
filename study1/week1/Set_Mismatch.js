@@ -11,18 +11,17 @@
 function findErrorNums(nums) {
   const correctSum = (nums.length * (nums.length + 1)) / 2;
   const checkArray = new Array(nums.length);
-
+  
   let sum = 0;
   let duplicate = 0;
 
   for (const num of nums) {
-    if (checkArray[num]) {
+    if (checkArray[num - 1]) {
       duplicate = num;
-      sum += num;
     } else {
-      checkArray[num] = true;
-      sum += num;
+      checkArray[num - 1] = true;
     }
+    sum += num;
   }
   return [duplicate, correctSum - sum + duplicate];
 };
