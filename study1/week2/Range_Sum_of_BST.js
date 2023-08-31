@@ -15,16 +15,23 @@
  * @return {number}
  */
 
-// 시간복잡도 : O(n) 주어진 root의 길이 만큼 재귀함수가 실행 되어서 시간복잡도는 O(n)
-// 공간복잡도 : O(1) sum변수 하나만 사용되기 때문에 공간복잡도는 O(1)
+// 시간복잡도 : O(n) 주어진 root의 길이 만큼 반복문이 실행 되어서 시간복잡도는 O(n)
+// 공간복잡도 : O(n) 최대 주어진 root의 길이 만큼 배열이 사용되기 때문에 공간복잡도는 O(n)
 
 function rangeSumBST(root, low, high) {
   let sum = 0;
-  const sumBST = (root) => {
-    if (low < root.val && root.val < high) sum += root.val;
-    if (root.left && low < root.val) sumBST(root.left);
-    if (root.right && root.val < high) sumBST(root.right);
+  let restNodes = [root];
+
+  while (0 < restNodes.length) {
+    root = restNodes.pop();
+    if (root) {
+      if (root.val < low) root.left = null;
+      else if (high < root.val) root.right = null;
+      else sum += root.val;
+
+      restNodes.push(root.left);
+      restNodes.push(root.right);
+    } 
   }
-  sumBST(root);
-  return sum + low + high;
+  return sum
 }
