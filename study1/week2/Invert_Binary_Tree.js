@@ -21,7 +21,7 @@ function invertTree(root) {
 
   while (0 < restNodes.length) {
     let currentNode = restNodes.pop();
-    if (currentNode !== null) {
+    if (currentNode) {
       [currentNode.left, currentNode.right] = [currentNode.right, currentNode.left];
       restNodes.push(currentNode.right);
       restNodes.push(currentNode.left);
