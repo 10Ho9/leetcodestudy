@@ -17,5 +17,5 @@ function longestPalindrome(s) {
     if (lettersCountArray[s.charCodeAt(i) - 65] % 2 === 0) result += 2;
   }
 
-  return s.length > result ? result + 1 : result;
+  return result < s.length ? result + 1 : result;
 }
