@@ -15,8 +15,8 @@ function numOfMinutes(n, headID, manager, informTime) {
   const organizationTree = Array.from({length: n}, () => []);
   let result = 0;
 
-  for (let employer = 0; employer < n; employer++) {
-    if (employer !== headID) organizationTree[manager[employer]].push(employer);
+  for (let employee = 0; employee < n; employee++) {
+    if (employee !== headID) organizationTree[manager[employee]].push(employee);
   }
 
   return dfs(headID, informTime, organizationTree);
