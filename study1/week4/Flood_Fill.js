@@ -8,8 +8,8 @@
  * @return {number[][]}
  */
 
-// 시간복잡도 : O(n) 주어진 head의 길이 만큼 반복문이 실행 되어서 시간복잡도는 O(n)
-// 공간복잡도 : O(1) 주어진 head를 사용해서 공간복잡도는 O(1)
+// 시간복잡도 : O(n) 최대 주어진 image의 총 길이 * 4 만큼 반복문이 실행 되어서 시간복잡도는 O(n)
+// 공간복잡도 : O(n) 주어진 image의 총 길이 만큼의 스택을 만들어서 사용해서 공간복잡도는 O(n)
 
 function floodFill(image, sr, sc, color) {
   const startColor = image[sr][sc];
