@@ -14,10 +14,10 @@ function validPalindrome(s) {
   
   function isPalindrome(left, right) {
     while (left < right) {
-      if (s[left] === s[right]) {
+      if (s[left] !== s[right]) return false;
+
       left++;
       right--;
-      } else return false;
     }
     return true;
   }
@@ -27,8 +27,7 @@ function validPalindrome(s) {
       left++;
       right--;
     } else {
-      if (isPalindrome(left + 1 , right) || isPalindrome(left, right - 1)) return true;
-      return false;
+      return isPalindrome(left + 1 , right) || isPalindrome(left, right - 1);
     }    
   }  
   return true;
