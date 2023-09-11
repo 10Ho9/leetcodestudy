@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/flood-fill/submissions/
+// https://leetcode.com/problems/flood-fill/
 
 /**
  * @param {number[][]} image
@@ -23,12 +23,12 @@ function floodFill(image, sr, sc, color) {
     const [row, col] = stack.pop();
     
     if (image[row][col] !== color) {
-      const direction = [[row - 1, col], [row + 1, col], [row, col + 1], [row, col - 1]];
       image[row][col] = color;
 
-      for (const d of direction) {
-        if (0 <= d[0] && d[0] < lengthRow && 0 <= d[1] && d[1] < lengthCol && image[d[0]][d[1]] === startColor) stack.push([d[0], d[1]]);
-      }
+      if (0 <= row - 1 && image[row - 1][col] === startColor) stack.push([row - 1, col]);
+      if (0 <= col - 1 && image[row][col - 1] === startColor) stack.push([row, col - 1]);
+      if (row + 1 < lengthRow && image[row + 1][col] === startColor) stack.push([row + 1, col]);
+      if (col + 1 < lengthCol && image[row][col + 1] === startColor) stack.push([row, col + 1]);
     }
   }
   return image;
