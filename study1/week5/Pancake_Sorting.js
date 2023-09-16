@@ -17,7 +17,8 @@ function pancakeSort(arr) {
       const index = arr.indexOf(max);
       if (!index) {
         result.push(max);
-        arr = arr.slice(0, max).reverse();
+        arr = arr.slice(1, max).reverse();
+        break;
       } else {
         result.push(index + 1);
         arr = arr.slice(0, index + 1).reverse().concat(arr.slice(index+1));
