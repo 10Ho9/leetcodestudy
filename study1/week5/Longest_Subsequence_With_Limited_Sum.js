@@ -6,7 +6,7 @@
  * @return {number[]}
  */
 
-// 시간복잡도 : O(nlogn) 주어진 nums을 정렬하기 때문에 시간복잡도는 O(nlogn)
+// 시간복잡도 : O(q * n) nums의 길이를 n, queries의 길이를 q, 주어진 nums을 정렬하기 nlogn, 최대 반복문을 q * n 만큼 하기 때문에 시간복잡도는 O(q * n)
 // 공간복잡도 : O(q) queries의 길이 만큼의 배열이 필요하므로 공간복잡도는 O(q)
 
 function answerQueries(nums, queries) {
