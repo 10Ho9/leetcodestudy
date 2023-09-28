@@ -5,7 +5,7 @@
  * @return {number[]}
  */
 
-// 시간복잡도 : O(n) 주어진 s의 총 길이 n만큼 반복문이 실행 되어서 시간복잡도는 O(n * k)
+// 시간복잡도 : O(n) 주어진 s의 총 길이 n만큼 반복문이 실행 되어서 시간복잡도는 O(n)
 // 공간복잡도 : O(n) 최대 nums의 길이 * 2 만큼 공간이 필요하기 때문에 O(n)
 
 function maxSlidingWindow(nums, k) {
